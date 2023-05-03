@@ -1,11 +1,12 @@
-let tileSize = 50;
+let tileSize = 30;
 let currentPosition = 0;
 let foodPosition = 1;
-let foodSize = 50;
+let foodSize = 2;
 let snakeLength = 1;
 let bodyColor = 0;
 let snakeBody = new Array();
 let lastMove = "d";
+let moveFlag = true;
 snakeBody.push(currentPosition);
 console.log(snakeBody);
 let playTiles = document.getElementById("playTiles");
@@ -25,6 +26,7 @@ function run(){
 console.log("HI");
     if(runFlag){
         drawSnake();
+        moveFlag = true;
         if(lastMove == "d" ){
             tiles[currentPosition].classList.add("right")
             moveRight();
@@ -50,13 +52,18 @@ console.log("HI");
         if(tiles[currentPosition].classList.contains("snakeBody")){
             gameOver();
         }
+        
+        
     }
 }
 
 window.addEventListener("keydown",e =>{
-    if(lastMove =="")
+    if(moveFlag &&!(lastMove == "d" && e.key =="a" ||
+    lastMove == "a" && e.key =="d" ||
+    lastMove == "w" && e.key =="s" ||
+    lastMove == "s" && e.key =="w"))
     lastMove = e.key;
-    
+    moveFlag=false;
     
 })
 
