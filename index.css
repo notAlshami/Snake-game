@@ -1,0 +1,56 @@
+body{
+    background-color: #222;
+}
+#playTiles{
+    
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(var(--tileSize),1fr);
+    width: fit-content;
+    height: fit-content;
+    background-color: black;
+    overflow: hidden;
+}
+
+.tile{
+    width:1em;
+    height: 1em;
+    background-color: black;
+}
+.snakeHead{
+    background-color: rgb(145, 255, 0);
+}
+.right{
+    border-radius:  0 50%  50% 0;
+}
+.left{
+    border-radius:   50% 0 0 50%;
+}
+.up{
+    border-radius:   50%  50% 0 0;
+
+}
+.down{
+    border-radius: 0 0 50% 50%;
+}
+.snakeBody{
+    background-color: hsl(var(--color), 100%, 50%)
+}
+.food{
+    box-sizing: border-box;
+    border-radius: 50%;
+    background-color: rgb(108, 27, 27);
+    /* box-shadow: 0 0 1em 0 white ; */
+    border: 0.001em solid white;
+    z-index: 1;
+    animation :food 1s infinite ease;
+}
+
+@keyframes food {
+    0%{
+        scale: 1;
+    }
+    50%{
+        scale :1.25;
+    }
+}
