@@ -18,7 +18,7 @@ Welcome to the Snake Game! In this simple yet addictive game, you control a snak
 
 ## Play the Game
 
-You can try the game by following this link: [Play Snake Game](https://notalshami.github.io/webSnake/)
+You can try the game by following this link: [Play Snake Game](https://notalshami.github.io/Snake-game/)
 
 ## Note
 
